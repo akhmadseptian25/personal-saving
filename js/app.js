@@ -15,6 +15,98 @@ document.addEventListener("DOMContentLoaded", function () {
     const pageTitle =
         document.getElementById("pageTitle");
 
+        // =================================
+// MOBILE MENU
+// =================================
+
+const mobileMenuButton =
+    document.getElementById("mobileMenuButton");
+
+const mobileMenuOverlay =
+    document.getElementById("mobileMenuOverlay");
+
+const sidebar =
+    document.querySelector(".sidebar");
+
+
+// =================================
+// BUKA / TUTUP MOBILE MENU
+// =================================
+
+function toggleMobileMenu() {
+
+    if (!sidebar) {
+        return;
+    }
+
+    sidebar.classList.toggle("mobile-open");
+
+    const isOpen =
+        sidebar.classList.contains("mobile-open");
+
+
+    if (mobileMenuButton) {
+
+        mobileMenuButton.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        mobileMenuButton.textContent =
+            isOpen ? "✕" : "☰";
+    }
+
+
+    if (mobileMenuOverlay) {
+
+        mobileMenuOverlay.classList.toggle(
+            "show",
+            isOpen
+        );
+    }
+}
+
+
+// =================================
+// BUTTON MENU
+// =================================
+
+if (mobileMenuButton) {
+
+    mobileMenuButton.addEventListener(
+        "click",
+        toggleMobileMenu
+    );
+
+}
+
+
+// =================================
+// KLIK OVERLAY
+// =================================
+
+if (mobileMenuOverlay) {
+
+    mobileMenuOverlay.addEventListener(
+        "click",
+        function () {
+
+            if (
+                sidebar &&
+                sidebar.classList.contains(
+                    "mobile-open"
+                )
+            ) {
+
+                toggleMobileMenu();
+
+            }
+
+        }
+    );
+
+}
+
     const navItems =
         document.querySelectorAll(".nav-item");
 
@@ -408,23 +500,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+navItems.forEach(function (item) {
 
-    navItems.forEach(
-        function (item) {
+    item.addEventListener("click", function () {
 
-            item.addEventListener(
-                "click",
-                function () {
+        const page = item.dataset.page;
 
-                    openPage(
-                        item.dataset.page
-                    );
+        openPage(page);
 
-                }
-            );
+
+        // Tutup menu setelah memilih halaman
+        if (
+            sidebar &&
+            sidebar.classList.contains(
+                "mobile-open"
+            )
+        ) {
+
+            toggleMobileMenu();
 
         }
-    );
+
+    });
+});
 
 
     mobileNavItems.forEach(
