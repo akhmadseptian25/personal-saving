@@ -4098,3 +4098,353 @@ section:has(.account-card)
     }
 
 }
+
+/* =========================================================
+   MOBILE FIX - PERSONAL SAVING DASHBOARD
+   HANYA UNTUK LAYAR HP
+   Tidak mengubah fungsi / JavaScript
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------------------------------
+       1. HILANGKAN SIDEBAR DESKTOP
+       ----------------------------------------------------- */
+
+    .sidebar {
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       2. BUAT AREA UTAMA MEMAKAI FULL WIDTH
+       ----------------------------------------------------- */
+
+    body {
+        width: 100% !important;
+        min-width: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    .main-content,
+    .content,
+    #app {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       3. KONTEN HALAMAN
+       ----------------------------------------------------- */
+
+    .page-content,
+    .dashboard-page {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 18px 14px 80px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       4. HEADER
+       ----------------------------------------------------- */
+
+    header,
+    .header,
+    .topbar,
+    .page-header {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* -----------------------------------------------------
+       5. JUDUL
+       ----------------------------------------------------- */
+
+    .dashboard-page h2,
+    .dashboard-header h2,
+    .page-content > h2 {
+        font-size: 23px !important;
+        line-height: 1.3 !important;
+    }
+
+    .dashboard-header {
+        margin-bottom: 16px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       6. SUMMARY CARD
+       ----------------------------------------------------- */
+
+    .summary-grid,
+    .dashboard-summary {
+        display: grid !important;
+
+        grid-template-columns: 1fr 1fr !important;
+
+        gap: 10px !important;
+
+        width: 100% !important;
+    }
+
+    .summary-card {
+        width: 100% !important;
+        min-width: 0 !important;
+
+        padding: 13px !important;
+
+        border-radius: 10px !important;
+    }
+
+    .summary-label {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+    }
+
+    .summary-card strong,
+    .summary-value {
+        font-size: 17px !important;
+
+        word-break: break-word !important;
+    }
+
+
+    /* -----------------------------------------------------
+       7. AKUN TABUNGAN
+       ----------------------------------------------------- */
+
+    .dashboard-section {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .dashboard-account-card,
+    .account-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+
+        padding: 14px !important;
+
+        margin-bottom: 10px !important;
+    }
+
+    .dashboard-account-card .account-card-top {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .dashboard-account-card h4,
+    .account-card h3 {
+        font-size: 17px !important;
+
+        word-break: break-word !important;
+    }
+
+    .dashboard-account-card p,
+    .account-card p {
+        font-size: 13px !important;
+
+        line-height: 1.5 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       8. PROGRESS BAR
+       ----------------------------------------------------- */
+
+    .progress-container,
+    .progress-bar {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* -----------------------------------------------------
+       9. TRANSAKSI TERBARU
+       ----------------------------------------------------- */
+
+    .transaction-list {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .dashboard-transaction {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 10px !important;
+
+        padding: 12px !important;
+    }
+
+    .transaction-icon {
+        flex: 0 0 auto !important;
+    }
+
+    .transaction-info {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+    }
+
+    .transaction-info strong,
+    .transaction-info span,
+    .transaction-info small {
+        display: block !important;
+
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    .transaction-amount {
+        flex: 0 0 auto !important;
+
+        font-size: 13px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* -----------------------------------------------------
+       10. FORM INPUT
+       ----------------------------------------------------- */
+
+    input,
+    select,
+    textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #transactionAccount,
+    #transactionAmount,
+    #transactionDate,
+    #transactionNote,
+    #salaryInput,
+    #accountNameInput,
+    #accountTargetInput,
+    #budgetCategoryName,
+    #budgetCategoryPercentage {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+
+    /* -----------------------------------------------------
+       11. SECTION
+       ----------------------------------------------------- */
+
+    #app .page-content > section {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        padding: 14px !important;
+
+        border-radius: 10px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       12. RIWAYAT TABUNGAN
+       ----------------------------------------------------- */
+
+    #transactionHistory {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        overflow: hidden !important;
+    }
+
+    #transactionHistory .transaction-item {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        display: grid !important;
+
+        grid-template-columns: 1fr auto !important;
+
+        gap: 8px !important;
+
+        padding: 12px !important;
+    }
+
+    #transactionHistory .transaction-item > strong:first-child {
+        min-width: 0 !important;
+    }
+
+    #transactionHistory .transaction-item > div {
+        min-width: 0 !important;
+    }
+
+    #transactionHistory .delete-transaction {
+        grid-column: auto !important;
+
+        width: auto !important;
+
+        min-width: 40px !important;
+
+        padding: 7px 9px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       13. TOMBOL
+       ----------------------------------------------------- */
+
+    button {
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* -----------------------------------------------------
+       14. JANGAN BIARKAN ELEMEN MELUBER KE KANAN
+       ----------------------------------------------------- */
+
+    #app *,
+    .page-content *,
+    .dashboard-page * {
+        max-width: 100%;
+    }
+
+}
