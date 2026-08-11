@@ -4939,3 +4939,104 @@ section:has(.account-card)
 
 
 }
+
+/* =========================================================
+   MOBILE MENU - CLICK FIX
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Tombol hamburger paling atas */
+    .mobile-menu-button {
+        position: fixed !important;
+
+        top: 14px !important;
+        left: 14px !important;
+
+        z-index: 10002 !important;
+
+        pointer-events: auto !important;
+    }
+
+
+    /* Overlay hanya menerima klik ketika aktif */
+    .mobile-menu-overlay {
+        position: fixed !important;
+
+        inset: 0 !important;
+
+        z-index: 10000 !important;
+
+        pointer-events: none !important;
+
+        background: rgba(0, 0, 0, 0.55) !important;
+    }
+
+
+    .mobile-menu-overlay.show {
+        display: block !important;
+
+        pointer-events: auto !important;
+    }
+
+
+    /* Sidebar harus berada di atas overlay */
+    .sidebar {
+        position: fixed !important;
+
+        top: 0 !important;
+        left: 0 !important;
+
+        z-index: 10001 !important;
+
+        pointer-events: auto !important;
+    }
+
+
+    /* Saat sidebar terbuka */
+    .sidebar.mobile-open {
+        pointer-events: auto !important;
+    }
+
+
+    /* Semua tombol menu harus bisa diklik */
+    .sidebar .navigation {
+        position: relative !important;
+
+        z-index: 10003 !important;
+
+        pointer-events: auto !important;
+    }
+
+
+    .sidebar .nav-item {
+        position: relative !important;
+
+        z-index: 10004 !important;
+
+        pointer-events: auto !important;
+
+        cursor: pointer !important;
+    }
+
+
+    .sidebar .nav-item * {
+        pointer-events: none !important;
+    }
+
+
+    /* Pastikan sidebar tidak ditembus overlay */
+    .sidebar,
+    .sidebar * {
+        pointer-events: auto !important;
+    }
+
+
+    /*
+       Tombol menu tetap bisa dipakai
+       meskipun sidebar terbuka
+    */
+    .mobile-menu-button {
+        pointer-events: auto !important;
+    }
+}
