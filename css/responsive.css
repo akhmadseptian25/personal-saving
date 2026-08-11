@@ -1,0 +1,182 @@
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   BODY
+===================================== */
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f5f6f8;
+
+    color: #222;
+
+    min-height: 100vh;
+}
+
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    background: #ffffff;
+
+    border-right: 1px solid #e5e5e5;
+
+    padding: 24px 16px;
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 40px;
+
+    padding-left: 8px;
+}
+
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.navigation {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.nav-item {
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    transition: 0.2s;
+}
+
+
+.nav-item:hover {
+    background: #f2f2f2;
+}
+
+
+.nav-item.active {
+    background: #eeeeee;
+
+    font-weight: 600;
+}
+
+
+/* =====================================
+   MAIN CONTENT
+===================================== */
+
+.main-content {
+    margin-left: 240px;
+
+    min-height: 100vh;
+}
+
+
+/* =====================================
+   TOPBAR
+===================================== */
+
+.topbar {
+    height: 70px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 30px;
+}
+
+
+.topbar h1 {
+    font-size: 22px;
+}
+
+
+/* =====================================
+   CONTENT
+===================================== */
+
+.content {
+    padding: 30px;
+}
+
+
+/* =====================================
+   MOBILE MENU BUTTON
+===================================== */
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================
+   MOBILE NAVIGATION
+===================================== */
+
+.mobile-navigation {
+    display: none;
+}
